@@ -4,6 +4,7 @@ import userRouter from "./routes/user.js"
 import { connectdb } from './database/connectdb.js'
 
 import { config } from "dotenv"
+
 const app = express()
 config({
     path: "./database/config.env"

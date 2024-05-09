@@ -2,7 +2,7 @@ import { User } from "../models/userModel.js";
 
 
 export const getAllUser = async (req, res) => {
-    console.log(req.query);
+    console.log("all" , req.query);
     const users = await User.find({})
 
 
@@ -31,15 +31,17 @@ export const register =  async (req, res) => {
 }
 
 
-export const getByid = async (req, res) => {
+export const getByid = async(req, res) => {
 
 
+    
     // const { id } = req.body
-    const { id } = req.query
-    // const { id } = req.params
-    console.log("fdgb" , req.query);
+    // const { id } = req.query
+    // ! in case of dynamic routing
+    const { id } = req.params
+    console.log("fdgb" , id);
      const user = await User.findById(id)
-
+// console.log("usernnnnn" , user);
      res.json({
         succcess:true,
         user,

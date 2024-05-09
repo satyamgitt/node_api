@@ -1,6 +1,6 @@
 import express from "express"
 import { User } from "../models/userModel.js";
-import { getAllUser, register, getByid } from "../controllers/userController.js";
+import { getAllUser, getByid, register } from "../controllers/userController.js";
 
 const router = express.Router()
 
@@ -15,6 +15,6 @@ router.get("/all", getAllUser)
 router.post("/new", register)
 
 
-router.get("/userid/:id", getByid)
+router.get("/userid/:id", getByid )
 
 export default router
